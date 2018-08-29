@@ -8,7 +8,7 @@
 # device is the codename for the device
 %define device pioneer
 
-%define ha_device_override h4113
+%define ha_device_override sony-nile
 
 # repo service performed : %%include define-trees
 %define dhs_trees art compatibility cts dalvik developers development docs packages pdk platform_testing prebuilts/abi-dumps prebuilts/build-tools prebuilts/checkcolor prebuilts/checkstyle prebuilts/clang/host/linux-x86 prebuilts/deqp prebuilts/devtools prebuilts/gdb prebuilts/go prebuilts/gradle-plugin prebuilts/jdk prebuilts/libs prebuilts/maven_repo prebuilts/python sdk test toolchain tools bionic bootable build device external frameworks hardware kernel libcore libnativehelper prebuilts/gcc/linux-x86 prebuilts/misc prebuilts/ndk prebuilts/sdk prebuilts/tools system vendor
