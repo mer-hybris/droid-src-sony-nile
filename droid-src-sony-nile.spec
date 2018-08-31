@@ -11,7 +11,7 @@
 %define ha_device_override sony-nile
 
 # repo service performed : %%include define-trees
-%define dhs_trees art compatibility cts dalvik developers development docs packages pdk platform_testing prebuilts/abi-dumps prebuilts/build-tools prebuilts/checkcolor prebuilts/checkstyle prebuilts/clang/host/linux-x86 prebuilts/deqp prebuilts/devtools prebuilts/gdb prebuilts/go prebuilts/gradle-plugin prebuilts/jdk prebuilts/libs prebuilts/maven_repo prebuilts/python sdk test toolchain tools bionic bootable build device external frameworks hardware kernel libcore libnativehelper prebuilts/gcc/linux-x86 prebuilts/misc prebuilts/ndk prebuilts/sdk prebuilts/tools system vendor
+%define dhs_trees art compatibility cts dalvik developers development docs packages pdk platform_testing prebuilts/abi-dumps prebuilts/build-tools prebuilts/checkcolor prebuilts/checkstyle prebuilts/clang/host/linux-x86 prebuilts/deqp prebuilts/devtools prebuilts/gdb/linux-x86 prebuilts/go/linux-x86 prebuilts/gradle-plugin prebuilts/jdk prebuilts/libs prebuilts/maven_repo prebuilts/python/linux-x86 sdk test toolchain tools bionic bootable build device external frameworks hardware kernel libcore libnativehelper prebuilts/gcc/linux-x86 prebuilts/misc prebuilts/ndk prebuilts/sdk prebuilts/tools system vendor
 
 %define device_variant -user
 %define lunch_device aosp_h4113
@@ -148,7 +148,7 @@ Provides: droid-bin-src-full
 Group:  System
 AutoReqProv: no
 Requires(post): /bin/sh
-Requires: %{dhs_feature}-dhs-rootdir %{dhs_feature}-art %{dhs_feature}-compatibility %{dhs_feature}-cts %{dhs_feature}-dalvik %{dhs_feature}-developers %{dhs_feature}-development %{dhs_feature}-docs %{dhs_feature}-packages %{dhs_feature}-pdk %{dhs_feature}-platform_testing %{dhs_feature}-prebuilts-abi-dumps %{dhs_feature}-prebuilts-build-tools %{dhs_feature}-prebuilts-checkcolor %{dhs_feature}-prebuilts-checkstyle %{dhs_feature}-prebuilts-clang-host-linux-x86 %{dhs_feature}-prebuilts-deqp %{dhs_feature}-prebuilts-devtools %{dhs_feature}-prebuilts-gdb %{dhs_feature}-prebuilts-go %{dhs_feature}-prebuilts-gradle-plugin %{dhs_feature}-prebuilts-jdk %{dhs_feature}-prebuilts-libs %{dhs_feature}-prebuilts-maven_repo %{dhs_feature}-prebuilts-python %{dhs_feature}-sdk %{dhs_feature}-test %{dhs_feature}-toolchain %{dhs_feature}-tools %{dhs_feature}-bionic %{dhs_feature}-bootable %{dhs_feature}-build %{dhs_feature}-device %{dhs_feature}-external %{dhs_feature}-frameworks %{dhs_feature}-hardware %{dhs_feature}-kernel %{dhs_feature}-libcore %{dhs_feature}-libnativehelper %{dhs_feature}-prebuilts-gcc-linux-x86 %{dhs_feature}-prebuilts-misc %{dhs_feature}-prebuilts-ndk %{dhs_feature}-prebuilts-sdk %{dhs_feature}-prebuilts-tools %{dhs_feature}-system %{dhs_feature}-vendor
+Requires: %{dhs_feature}-dhs-rootdir %{dhs_feature}-art %{dhs_feature}-compatibility %{dhs_feature}-cts %{dhs_feature}-dalvik %{dhs_feature}-developers %{dhs_feature}-development %{dhs_feature}-docs %{dhs_feature}-packages %{dhs_feature}-pdk %{dhs_feature}-platform_testing %{dhs_feature}-prebuilts-abi-dumps %{dhs_feature}-prebuilts-build-tools %{dhs_feature}-prebuilts-checkcolor %{dhs_feature}-prebuilts-checkstyle %{dhs_feature}-prebuilts-clang-host-linux-x86 %{dhs_feature}-prebuilts-deqp %{dhs_feature}-prebuilts-devtools %{dhs_feature}-prebuilts-gdb-linux-x86 %{dhs_feature}-prebuilts-go-linux-x86 %{dhs_feature}-prebuilts-gradle-plugin %{dhs_feature}-prebuilts-jdk %{dhs_feature}-prebuilts-libs %{dhs_feature}-prebuilts-maven_repo %{dhs_feature}-prebuilts-python-linux-x86 %{dhs_feature}-sdk %{dhs_feature}-test %{dhs_feature}-toolchain %{dhs_feature}-tools %{dhs_feature}-bionic %{dhs_feature}-bootable %{dhs_feature}-build %{dhs_feature}-device %{dhs_feature}-external %{dhs_feature}-frameworks %{dhs_feature}-hardware %{dhs_feature}-kernel %{dhs_feature}-libcore %{dhs_feature}-libnativehelper %{dhs_feature}-prebuilts-gcc-linux-x86 %{dhs_feature}-prebuilts-misc %{dhs_feature}-prebuilts-ndk %{dhs_feature}-prebuilts-sdk %{dhs_feature}-prebuilts-tools %{dhs_feature}-system %{dhs_feature}-vendor
 Summary: Syspart source for all the src trees to be used for droid-side code building
 %description dhs-full
 This is the full src tree for the %{dhs_name} manifest.
@@ -373,26 +373,26 @@ Summary: Source for the prebuilts-devtools src tree to be used for droid-side co
 This is the src tree for the prebuilts-devtools subdirectory from the %{device} manifest.
 It is only meant for use in the OBS.
 
-%package prebuilts-gdb
-Provides: %{dhs_feature}-prebuilts-gdb
+%package prebuilts-gdb-linux-x86
+Provides: %{dhs_feature}-prebuilts-gdb-linux-x86
 Group:  System
 AutoReqProv: no
 Requires: %{dhs_feature}-dhs-utils %{dhs_feature}-dhs-makefile
 Requires(post): /bin/sh
-Summary: Source for the prebuilts-gdb src tree to be used for droid-side code building
-%description prebuilts-gdb
-This is the src tree for the prebuilts-gdb subdirectory from the %{device} manifest.
+Summary: Source for the prebuilts-gdb-linux-x86 src tree to be used for droid-side code building
+%description prebuilts-gdb-linux-x86
+This is the src tree for the prebuilts-gdb-linux-x86 subdirectory from the %{device} manifest.
 It is only meant for use in the OBS.
 
-%package prebuilts-go
-Provides: %{dhs_feature}-prebuilts-go
+%package prebuilts-go-linux-x86
+Provides: %{dhs_feature}-prebuilts-go-linux-x86
 Group:  System
 AutoReqProv: no
 Requires: %{dhs_feature}-dhs-utils %{dhs_feature}-dhs-makefile
 Requires(post): /bin/sh
-Summary: Source for the prebuilts-go src tree to be used for droid-side code building
-%description prebuilts-go
-This is the src tree for the prebuilts-go subdirectory from the %{device} manifest.
+Summary: Source for the prebuilts-go-linux-x86 src tree to be used for droid-side code building
+%description prebuilts-go-linux-x86
+This is the src tree for the prebuilts-go-linux-x86 subdirectory from the %{device} manifest.
 It is only meant for use in the OBS.
 
 %package prebuilts-gradle-plugin
@@ -439,15 +439,15 @@ Summary: Source for the prebuilts-maven_repo src tree to be used for droid-side 
 This is the src tree for the prebuilts-maven_repo subdirectory from the %{device} manifest.
 It is only meant for use in the OBS.
 
-%package prebuilts-python
-Provides: %{dhs_feature}-prebuilts-python
+%package prebuilts-python-linux-x86
+Provides: %{dhs_feature}-prebuilts-python-linux-x86
 Group:  System
 AutoReqProv: no
 Requires: %{dhs_feature}-dhs-utils %{dhs_feature}-dhs-makefile
 Requires(post): /bin/sh
-Summary: Source for the prebuilts-python src tree to be used for droid-side code building
-%description prebuilts-python
-This is the src tree for the prebuilts-python subdirectory from the %{device} manifest.
+Summary: Source for the prebuilts-python-linux-x86 src tree to be used for droid-side code building
+%description prebuilts-python-linux-x86
+This is the src tree for the prebuilts-python-linux-x86 subdirectory from the %{device} manifest.
 It is only meant for use in the OBS.
 
 %package sdk
@@ -908,19 +908,19 @@ chown -R 399:399 /home/abuild/src/droid/prebuilts/devtools
 %defattr(-,root,root,-)
 /home/abuild/src/droid/prebuilts/devtools
 
-%post prebuilts-gdb
+%post prebuilts-gdb-linux-x86
 # The abuild user is not setup at post time so we use the numeric id
-chown -R 399:399 /home/abuild/src/droid/prebuilts/gdb
-%files prebuilts-gdb
+chown -R 399:399 /home/abuild/src/droid/prebuilts/gdb/linux-x86
+%files prebuilts-gdb-linux-x86
 %defattr(-,root,root,-)
-/home/abuild/src/droid/prebuilts/gdb
+/home/abuild/src/droid/prebuilts/gdb/linux-x86
 
-%post prebuilts-go
+%post prebuilts-go-linux-x86
 # The abuild user is not setup at post time so we use the numeric id
-chown -R 399:399 /home/abuild/src/droid/prebuilts/go
-%files prebuilts-go
+chown -R 399:399 /home/abuild/src/droid/prebuilts/go/linux-x86
+%files prebuilts-go-linux-x86
 %defattr(-,root,root,-)
-/home/abuild/src/droid/prebuilts/go
+/home/abuild/src/droid/prebuilts/go/linux-x86
 
 %post prebuilts-gradle-plugin
 # The abuild user is not setup at post time so we use the numeric id
@@ -950,12 +950,12 @@ chown -R 399:399 /home/abuild/src/droid/prebuilts/maven_repo
 %defattr(-,root,root,-)
 /home/abuild/src/droid/prebuilts/maven_repo
 
-%post prebuilts-python
+%post prebuilts-python-linux-x86
 # The abuild user is not setup at post time so we use the numeric id
-chown -R 399:399 /home/abuild/src/droid/prebuilts/python
-%files prebuilts-python
+chown -R 399:399 /home/abuild/src/droid/prebuilts/python/linux-x86
+%files prebuilts-python-linux-x86
 %defattr(-,root,root,-)
-/home/abuild/src/droid/prebuilts/python
+/home/abuild/src/droid/prebuilts/python/linux-x86
 
 %post sdk
 # The abuild user is not setup at post time so we use the numeric id

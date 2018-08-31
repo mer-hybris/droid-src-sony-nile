@@ -15,13 +15,13 @@ prebuilts/checkstyle
 prebuilts/clang/host/linux-x86
 prebuilts/deqp
 prebuilts/devtools
-prebuilts/gdb
-prebuilts/go
+prebuilts/gdb/linux-x86
+prebuilts/go/linux-x86
 prebuilts/gradle-plugin
 prebuilts/jdk
 prebuilts/libs
 prebuilts/maven_repo
-prebuilts/python
+prebuilts/python/linux-x86
 sdk
 test
 toolchain
