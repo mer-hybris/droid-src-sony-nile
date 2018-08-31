@@ -13,8 +13,8 @@
 # repo service performed : %%include define-trees
 %define dhs_trees art compatibility cts dalvik developers development docs packages pdk platform_testing prebuilts/abi-dumps prebuilts/build-tools prebuilts/checkcolor prebuilts/checkstyle prebuilts/clang/host/linux-x86 prebuilts/deqp prebuilts/devtools prebuilts/gdb prebuilts/go prebuilts/gradle-plugin prebuilts/jdk prebuilts/libs prebuilts/maven_repo prebuilts/python sdk test toolchain tools bionic bootable build device external frameworks hardware kernel libcore libnativehelper prebuilts/gcc/linux-x86 prebuilts/misc prebuilts/ndk prebuilts/sdk prebuilts/tools system vendor
 
-%define device_variant -userdebug
-%define lunch_device aosp_h4113-user
+%define device_variant -user
+%define lunch_device aosp_h4113
 %define pre_actions sudo update-java-alternatives -s java-1.8.0-openjdk-amd64
 
 # Our promotions fail, because rpm v4.9 can't handle conditional macros well, see JB#33275
