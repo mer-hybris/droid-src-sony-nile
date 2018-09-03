@@ -11,7 +11,7 @@
 %define ha_device_override sony-nile
 
 # repo service performed : %%include define-trees
-%define dhs_trees art compatibility cts dalvik developers development docs packages pdk platform_testing prebuilts/abi-dumps prebuilts/build-tools prebuilts/checkcolor prebuilts/checkstyle prebuilts/clang/host/linux-x86 prebuilts/deqp prebuilts/devtools prebuilts/gdb/linux-x86 prebuilts/go/linux-x86 prebuilts/gradle-plugin prebuilts/jdk prebuilts/libs prebuilts/maven_repo prebuilts/python/linux-x86 sdk test toolchain tools bionic bootable build device external frameworks hardware kernel libcore libnativehelper prebuilts/gcc/linux-x86 prebuilts/misc prebuilts/ndk prebuilts/sdk prebuilts/tools system vendor
+%define dhs_trees art compatibility cts dalvik developers development docs packages pdk platform_testing prebuilts/abi-dumps prebuilts/build-tools prebuilts/checkcolor prebuilts/checkstyle prebuilts/clang/host/linux-x86 prebuilts/deqp prebuilts/devtools prebuilts/gdb/linux-x86 prebuilts/go/linux-x86 prebuilts/gradle-plugin prebuilts/jdk prebuilts/libs prebuilts/maven_repo prebuilts/python/linux-x86 sdk test toolchain tools bionic bootable build device external frameworks hardware libcore libnativehelper prebuilts/gcc/linux-x86 prebuilts/misc prebuilts/ndk prebuilts/sdk prebuilts/tools system vendor
 
 %define device_variant -user
 %define lunch_device aosp_h4113
@@ -148,7 +148,7 @@ Provides: droid-bin-src-full
 Group:  System
 AutoReqProv: no
 Requires(post): /bin/sh
-Requires: %{dhs_feature}-dhs-rootdir %{dhs_feature}-art %{dhs_feature}-compatibility %{dhs_feature}-cts %{dhs_feature}-dalvik %{dhs_feature}-developers %{dhs_feature}-development %{dhs_feature}-docs %{dhs_feature}-packages %{dhs_feature}-pdk %{dhs_feature}-platform_testing %{dhs_feature}-prebuilts-abi-dumps %{dhs_feature}-prebuilts-build-tools %{dhs_feature}-prebuilts-checkcolor %{dhs_feature}-prebuilts-checkstyle %{dhs_feature}-prebuilts-clang-host-linux-x86 %{dhs_feature}-prebuilts-deqp %{dhs_feature}-prebuilts-devtools %{dhs_feature}-prebuilts-gdb-linux-x86 %{dhs_feature}-prebuilts-go-linux-x86 %{dhs_feature}-prebuilts-gradle-plugin %{dhs_feature}-prebuilts-jdk %{dhs_feature}-prebuilts-libs %{dhs_feature}-prebuilts-maven_repo %{dhs_feature}-prebuilts-python-linux-x86 %{dhs_feature}-sdk %{dhs_feature}-test %{dhs_feature}-toolchain %{dhs_feature}-tools %{dhs_feature}-bionic %{dhs_feature}-bootable %{dhs_feature}-build %{dhs_feature}-device %{dhs_feature}-external %{dhs_feature}-frameworks %{dhs_feature}-hardware %{dhs_feature}-kernel %{dhs_feature}-libcore %{dhs_feature}-libnativehelper %{dhs_feature}-prebuilts-gcc-linux-x86 %{dhs_feature}-prebuilts-misc %{dhs_feature}-prebuilts-ndk %{dhs_feature}-prebuilts-sdk %{dhs_feature}-prebuilts-tools %{dhs_feature}-system %{dhs_feature}-vendor
+Requires: %{dhs_feature}-dhs-rootdir %{dhs_feature}-art %{dhs_feature}-compatibility %{dhs_feature}-cts %{dhs_feature}-dalvik %{dhs_feature}-developers %{dhs_feature}-development %{dhs_feature}-docs %{dhs_feature}-packages %{dhs_feature}-pdk %{dhs_feature}-platform_testing %{dhs_feature}-prebuilts-abi-dumps %{dhs_feature}-prebuilts-build-tools %{dhs_feature}-prebuilts-checkcolor %{dhs_feature}-prebuilts-checkstyle %{dhs_feature}-prebuilts-clang-host-linux-x86 %{dhs_feature}-prebuilts-deqp %{dhs_feature}-prebuilts-devtools %{dhs_feature}-prebuilts-gdb-linux-x86 %{dhs_feature}-prebuilts-go-linux-x86 %{dhs_feature}-prebuilts-gradle-plugin %{dhs_feature}-prebuilts-jdk %{dhs_feature}-prebuilts-libs %{dhs_feature}-prebuilts-maven_repo %{dhs_feature}-prebuilts-python-linux-x86 %{dhs_feature}-sdk %{dhs_feature}-test %{dhs_feature}-toolchain %{dhs_feature}-tools %{dhs_feature}-bionic %{dhs_feature}-bootable %{dhs_feature}-build %{dhs_feature}-device %{dhs_feature}-external %{dhs_feature}-frameworks %{dhs_feature}-hardware %{dhs_feature}-libcore %{dhs_feature}-libnativehelper %{dhs_feature}-prebuilts-gcc-linux-x86 %{dhs_feature}-prebuilts-misc %{dhs_feature}-prebuilts-ndk %{dhs_feature}-prebuilts-sdk %{dhs_feature}-prebuilts-tools %{dhs_feature}-system %{dhs_feature}-vendor
 Summary: Syspart source for all the src trees to be used for droid-side code building
 %description dhs-full
 This is the full src tree for the %{dhs_name} manifest.
@@ -569,17 +569,6 @@ Requires(post): /bin/sh
 Summary: Source for the hardware src tree to be used for droid-side code building
 %description hardware
 This is the src tree for the hardware subdirectory from the %{device} manifest.
-It is only meant for use in the OBS.
-
-%package kernel
-Provides: %{dhs_feature}-kernel
-Group:  System
-AutoReqProv: no
-Requires: %{dhs_feature}-dhs-utils %{dhs_feature}-dhs-makefile
-Requires(post): /bin/sh
-Summary: Source for the kernel src tree to be used for droid-side code building
-%description kernel
-This is the src tree for the kernel subdirectory from the %{device} manifest.
 It is only meant for use in the OBS.
 
 %package libcore
@@ -1033,13 +1022,6 @@ chown -R 399:399 /home/abuild/src/droid/hardware
 %files hardware
 %defattr(-,root,root,-)
 /home/abuild/src/droid/hardware
-
-%post kernel
-# The abuild user is not setup at post time so we use the numeric id
-chown -R 399:399 /home/abuild/src/droid/kernel
-%files kernel
-%defattr(-,root,root,-)
-/home/abuild/src/droid/kernel
 
 %post libcore
 # The abuild user is not setup at post time so we use the numeric id
