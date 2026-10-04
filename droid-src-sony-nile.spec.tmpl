@@ -23,5 +23,12 @@ Source52: %{dhs_name_hardcoded}.spec.tmpl\
 Source53: additional-source.paths\
 %{nil}
 
+# There are some symbolic links that point to them self and rpm does not eat
+# those anymore. Using readlink canonicalization failure to find those.
+# The fprint stderr and dev/null thing is for hiding the normal readlink output.
+%define post_build_actions \
+find %{android_root} -type l ! -exec readlink -qf {} \\; -fprint /dev/stderr -delete > /dev/null\
+%{nil}
+
 %include dhs/droid-hal-source.inc
 
